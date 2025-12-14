@@ -1,93 +1,57 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import { useCart } from "./CartContext";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
-    const [open , setOPEN] = useState(false)
+  const [open, setOpen] = useState(false);
+  // const { itemCount } = useCart();
+  const navigate = useNavigate();
+
+  // const handleIconsClick = () => {
+  //   navigate("/checkout"); 
+  // };
+
   return (
-   
+    <nav className="bg-black fixed w-full z-50 top-0 left-0 border-b border-gray-700">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4 text-white">
+        <h2 className="text-lg font-bold">Service Booking App </h2>
 
-<nav className="bg-neutral-primary fixed w-full z-20 top-0 start-0 border-b border-default">
-  <div className="max-w-screen-xl text-white flex flex-wrap items-center justify-between mx-auto p-4">
-   <h2>Service booking App</h2>
-    <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <button
-        type="button"
-        className="text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none"
-      >
-        Get started
-      </button>
-      <button
-        // data-collapse-toggle="navbar-sticky"
-        type="button"
-        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
-        aria-controls="navbar-sticky"
-        aria-expanded="false"
-        onClick={()=> setOPEN(!open)}
-      >
-        <span className="sr-only">Open main menu</span>
-        <svg
-          className="w-6 h-6"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width={24}
-          height={24}
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeWidth={2}
-            d="M5 7h14M5 12h14M5 17h14"
-          />
-        </svg>
-      </button>
-    </div>
-    <div
-      className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${open? "block" : "hidden"}`}
-      id="navbar-sticky"
-    >
-      <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-default rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary">
-        <li>
-          <a
-            href="#"
-            className="block py-2 px-3 text-white bg-brand rounded-sm md:bg-transparent md:text-fg-brand md:p-0"
-            aria-current="page"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            className="block py-2 px-3 text-white rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            className="block py-2 px-3 text-white rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
-          >
-            Services
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            className="block py-2 px-3 text-white rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        <div className="hidden md:flex space-x-6">
+          <a href="/" className="hover:text-yellow-400">Home</a>
+          {/* <a href="checkout" className="hover:text-yellow-400">About</a> */}
+          <a href="/services" className="hover:text-yellow-400">Services</a>
+          {/* <a href="#" className="hover:text-yellow-400">Contact</a> */}
+        </div>
 
+        <div className="flex items-center space-x-4">
+          {/* <button onClick={handleIconsClick}>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 20.5A8.5 8.5 0 1 0 12 3.5a8.5 8.5 0 0 0 0 17z" />
+            </svg>
+          </button> */}
 
+          <button
+            className="md:hidden inline-flex items-center justify-center p-2 rounded hover:bg-gray-800 focus:outline-none"
+            onClick={() => setOpen(!open)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
 
-  )
+      <div className={`md:hidden bg-black w-full transition-all ${open ? "max-h-screen" : "max-h-0 overflow-hidden"}`}>
+        <ul className="flex flex-col p-4 space-y-2">
+          <li><a href="/" className="block py-2 px-3 text-white hover:bg-gray-800 rounded">Home</a></li>
+          {/* <li><a href="checkout" className="block py-2 px-3 text-white hover:bg-gray-800 rounded">About</a></li> */}
+          <li><a href="/services" className="block py-2 px-3 text-white hover:bg-gray-800 rounded">Services</a></li>
+          {/* <li><a href="#" className="block py-2 px-3 text-white hover:bg-gray-800 rounded">Contact</a></li> */}
+        </ul>
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;

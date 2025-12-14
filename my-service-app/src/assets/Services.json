@@ -7,14 +7,14 @@
     "price": 15000,
     "rating": 4.8,
     "duration": "7 Days",
-    "image": "/images/web-dev.jpg",
+    "image": "/images/web.jpg",
     "shortDescription": "Professional responsive website using modern tools.",
     "description": "I will create a fully responsive and modern website using React, Tailwind CSS, and clean UI design. Suitable for businesses, portfolios, and startups.",
     "features": [
       "Responsive Design",
       "Modern UI",
       "Fast Performance",
-      "SEO Friendly"
+      "SEO Friendly"  
     ]
   },
   {
@@ -24,7 +24,7 @@
     "price": 10000,
     "rating": 4.6,
     "duration": "5 Days",
-    "image": "/images/ui-ux.jpg",
+    "image": "/images/ui.jpg",
     "shortDescription": "Creative UI/UX design for mobile & web.",
     "description": "I will design clean, user-friendly, and modern UI/UX using Figma. Perfect for apps, websites, and dashboards.",
     "features": [
@@ -41,7 +41,7 @@
     "price": 5000,
     "rating": 4.7,
     "duration": "2 Days",
-    "image": "/images/react-bug.jpg",
+    "image": "/images/bug.jpg",
     "shortDescription": "Fix React errors & performance issues.",
     "description": "I will debug and fix issues in your React app including state issues, UI bugs, and performance optimization.",
     "features": [
@@ -57,7 +57,7 @@
     "price": 8000,
     "rating": 4.5,
     "duration": "4 Days",
-    "image": "/images/seo.jpg",
+    "image": "/images/sco.jpg",
     "shortDescription": "Improve website ranking on Google.",
     "description": "On-page SEO optimization including keyword research, meta tags, speed improvement, and optimization tips.",
     "features": [
@@ -73,7 +73,7 @@
     "price": 12000,
     "rating": 4.4,
     "duration": "30 Days",
-    "image": "/images/social-media.jpg",
+    "image": "/images/social.jpg",
     "shortDescription": "Grow your social media presence.",
     "description": "Manage posts, captions, and engagement on social platforms to grow your brand organically.",
     "features": [
@@ -89,7 +89,7 @@
     "price": 11000,
     "rating": 4.6,
     "duration": "6 Days",
-    "image": "/images/mobile-ui.jpg",
+    "image": "/images/mobile.jpg",
     "shortDescription": "Modern mobile app UI design.",
     "description": "Design clean mobile app interfaces for Android & iOS with best UI principles.",
     "features": [

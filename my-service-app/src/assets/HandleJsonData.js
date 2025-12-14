@@ -6,12 +6,12 @@ export function getDATA() {
   return jsondata;
 }
 
-export function getCardData() {
+export function getCategories() {
   const data = getDATA();
-  console.log(data);
-  const mydata = [
-    { image: data.image },
-    {tiitle :data}
+  const mapedData = [...new Set(data.map(m => m.category))];
 
-  ];
+  
+  return mapedData
 }
+ const categoryData = getCategories()
+ console.log(categoryData)
